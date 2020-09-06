@@ -4,8 +4,8 @@ from PIL import Image
 import tools
 
 #cant encode larger image in smaller
-main_img = Image.open("butter.jpg")
-msg_img = Image.open("minions.jpg")
+main_img = Image.open("main.jpg")
+msg_img = Image.open("main copy.jpg")
 
 # def merge_files(main_img,msg_img):
 if msg_img.size[0] > main_img.size[0] or msg_img.size[1] > main_img.size[1]:
@@ -20,8 +20,6 @@ if msg_img.size[0] > main_img.size[0] or msg_img.size[1] > main_img.size[1]:
 
 bitmap_main = main_img.load()
 bitmap_msg = msg_img.load()
-main_img.show()
-msg_img.show()
 
 final_image = Image.new(main_img.mode,main_img.size)
 bitmap_final = final_image.load()
@@ -36,6 +34,8 @@ for i in range(main_img.size[0]):
 
         fin_rgb = tools.add_rgb(rgb1,rgb2)
         bitmap_final[i,j] = tools.bin_to_int(fin_rgb)
+        if 300 < i < 305 and 300 < j < 305:
+            print(rgb1,rgb2,fin_rgb)
 
 final_image.show()
 final_image.save("encoded.jpg")

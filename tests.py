@@ -15,9 +15,9 @@ bm = img.load()
 
 a = (123,222,78)
 b = (45,111,47)
-
 x = tools.int_to_bin(a)
 y = tools.int_to_bin(b)
+print(tools.bin_to_int(x),tools.bin_to_int(y))
 print(tools.int_to_bin(a))
 print(tools.int_to_bin(b))
 va = tools.add_rgb(x,y)
