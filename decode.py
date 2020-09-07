@@ -9,13 +9,13 @@ encoded_bitmap = encoded_img.load()
 final_img = Image.new(encoded_img.mode,encoded_img.size)
 final_bitmap = final_img.load()
 
+
 for i in range(encoded_img.size[0]):
     for j in range(encoded_img.size[1]):
         rgb = tools.int_to_bin(encoded_bitmap[i,j])
         r, g, b = rgb
         final_bitmap[i,j] = tools.bin_to_int((r[4:]+"0000",g[4:]+"0000",b[4:]+"0000"))
-        if 200<i<205 and 200<j<205:
-            print(rgb,(r[4:]+"0000",g[4:]+"0000",b[4:]+"0000"),final_bitmap[i,j])
+
 final_img.show()
 
 
