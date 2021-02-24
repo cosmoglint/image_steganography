@@ -4,7 +4,7 @@ from PIL import Image
 import tools
 
 #cant encode larger image in smaller
-main_img = Image.open("main copy.jpg")
+main_img = Image.open("embed.jpg")
 msg_img = Image.open("main.jpg")
 
 # def merge_files(main_img,msg_img):
